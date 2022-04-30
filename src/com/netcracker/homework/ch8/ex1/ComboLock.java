@@ -3,9 +3,9 @@ package com.netcracker.homework.ch8.ex1;
 public class ComboLock {
 
 
-    private int[] numbersLock = new int [3];
-    private String[] spin = new String[3];
-    private int[] numbersDialed = new int [3];
+    private final int[] numbersLock = new int [3];
+    private final String[] spin = new String[3];
+    private  int[] numbersDialed = new int [3];
     private boolean unlocked = false;
     private int numberCurrent;
     private int move;
@@ -73,11 +73,7 @@ public class ComboLock {
 
 
     public boolean lock(int checkCombination){
-        if (checkCombination == 3){
-            unlocked = true;
-        } else {
-            unlocked = false;
-        }
+        unlocked = checkCombination == 3;
         return unlocked;
     }
 
